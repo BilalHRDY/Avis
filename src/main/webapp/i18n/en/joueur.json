@@ -1,0 +1,28 @@
+{
+  "avisApp": {
+    "joueur": {
+      "home": {
+        "title": "Joueurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Joueur",
+        "createOrEditLabel": "Create or edit a Joueur",
+        "notFound": "No Joueurs found"
+      },
+      "created": "A new Joueur is created with identifier {{ param }}",
+      "updated": "A Joueur is updated with identifier {{ param }}",
+      "deleted": "A Joueur is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Joueur {{ id }}?"
+      },
+      "detail": {
+        "title": "Joueur"
+      },
+      "id": "Id",
+      "pseudo": "Pseudo",
+      "motDePasse": "Mot De Passe",
+      "dateInscription": "Date Inscription",
+      "estAdministrateur": "Est Administrateur",
+      "avis": "Avis"
+    }
+  }
+}

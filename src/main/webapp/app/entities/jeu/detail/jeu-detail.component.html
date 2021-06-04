@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="jeu">
+      <h2 data-cy="jeuDetailsHeading"><span jhiTranslate="avisApp.jeu.detail.title">Jeu</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="avisApp.jeu.id">Id</span></dt>
+        <dd>
+          <span>{{ jeu.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="avisApp.jeu.nom">Nom</span></dt>
+        <dd>
+          <span>{{ jeu.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="avisApp.jeu.description">Description</span></dt>
+        <dd>
+          <span>{{ jeu.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="avisApp.jeu.dateSortie">Date Sortie</span></dt>
+        <dd>
+          <span>{{ jeu.dateSortie | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="avisApp.jeu.avis">Avis</span></dt>
+        <dd>
+          <div *ngIf="jeu.avis">
+            <a [routerLink]="['/avis', jeu.avis?.id, 'view']">{{ jeu.avis?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/jeu', jeu.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

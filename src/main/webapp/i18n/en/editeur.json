@@ -1,0 +1,25 @@
+{
+  "avisApp": {
+    "editeur": {
+      "home": {
+        "title": "Editeurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Editeur",
+        "createOrEditLabel": "Create or edit a Editeur",
+        "notFound": "No Editeurs found"
+      },
+      "created": "A new Editeur is created with identifier {{ param }}",
+      "updated": "A Editeur is updated with identifier {{ param }}",
+      "deleted": "A Editeur is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Editeur {{ id }}?"
+      },
+      "detail": {
+        "title": "Editeur"
+      },
+      "id": "Id",
+      "nom": "Nom",
+      "jeu": "Jeu"
+    }
+  }
+}

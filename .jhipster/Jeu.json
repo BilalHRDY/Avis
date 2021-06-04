@@ -1,0 +1,45 @@
+{
+  "name": "Jeu",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateSortie",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "editeur",
+      "otherEntityRelationshipName": "jeu",
+      "relationshipName": "editeur"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "avis",
+      "otherEntityRelationshipName": "jeu",
+      "relationshipName": "avis"
+    }
+  ],
+  "entityTableName": "jeu",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210604123951"
+}

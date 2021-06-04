@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="avis">
+      <h2 data-cy="avisDetailsHeading"><span jhiTranslate="avisApp.avis.detail.title">Avis</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="avisApp.avis.id">Id</span></dt>
+        <dd>
+          <span>{{ avis.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="avisApp.avis.note">Note</span></dt>
+        <dd>
+          <span>{{ avis.note }}</span>
+        </dd>
+        <dt><span jhiTranslate="avisApp.avis.description">Description</span></dt>
+        <dd>
+          <span>{{ avis.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="avisApp.avis.dateEnvoi">Date Envoi</span></dt>
+        <dd>
+          <span>{{ avis.dateEnvoi | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/avis', avis.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

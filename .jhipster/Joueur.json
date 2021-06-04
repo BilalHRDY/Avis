@@ -1,0 +1,43 @@
+{
+  "name": "Joueur",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pseudo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "motDePasse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateInscription",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "estAdministrateur",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "avis",
+      "otherEntityRelationshipName": "joueur",
+      "relationshipName": "avis"
+    }
+  ],
+  "entityTableName": "joueur",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210604123954"
+}
