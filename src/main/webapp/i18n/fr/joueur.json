@@ -1,0 +1,28 @@
+{
+  "avisApp": {
+    "joueur": {
+      "home": {
+        "title": "Joueurs",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Joueur",
+        "createOrEditLabel": "Créer ou éditer un Joueur",
+        "notFound": "Aucun Joueur trouvé"
+      },
+      "created": "Un nouveau Joueur a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Joueur avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Joueur avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Joueur {{ id }} ?"
+      },
+      "detail": {
+        "title": "Joueur"
+      },
+      "id": "Id",
+      "pseudo": "Pseudo",
+      "motDePasse": "Mot De Passe",
+      "dateInscription": "Date Inscription",
+      "estAdministrateur": "Est Administrateur",
+      "avis": "Avis"
+    }
+  }
+}

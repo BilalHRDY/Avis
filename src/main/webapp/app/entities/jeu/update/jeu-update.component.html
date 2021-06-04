@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-jeu-heading" data-cy="JeuCreateUpdateHeading" jhiTranslate="avisApp.jeu.home.createOrEditLabel">Create or edit a Jeu</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="avisApp.jeu.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.jeu.nom" for="field_nom">Nom</label>
+          <input type="text" class="form-control" name="nom" id="field_nom" data-cy="nom" formControlName="nom" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.jeu.description" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.jeu.dateSortie" for="field_dateSortie">Date Sortie</label>
+          <div class="d-flex">
+            <input
+              id="field_dateSortie"
+              data-cy="dateSortie"
+              type="datetime-local"
+              class="form-control"
+              name="dateSortie"
+              formControlName="dateSortie"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.jeu.avis" for="field_avis">Avis</label>
+          <select class="form-control" id="field_avis" data-cy="avis" name="avis" formControlName="avis">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="avisOption.id === editForm.get('avis')!.value?.id ? editForm.get('avis')!.value : avisOption"
+              *ngFor="let avisOption of avisSharedCollection; trackBy: trackAvisById"
+            >
+              {{ avisOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

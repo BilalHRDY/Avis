@@ -1,0 +1,45 @@
+{
+  "name": "Avis",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateEnvoi",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "joueur",
+      "otherEntityRelationshipName": "avis",
+      "relationshipName": "joueur"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "jeu",
+      "otherEntityRelationshipName": "avis",
+      "relationshipName": "jeu"
+    }
+  ],
+  "entityTableName": "avis",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210604123953"
+}

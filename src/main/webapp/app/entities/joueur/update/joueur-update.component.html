@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-joueur-heading" data-cy="JoueurCreateUpdateHeading" jhiTranslate="avisApp.joueur.home.createOrEditLabel">
+        Create or edit a Joueur
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="avisApp.joueur.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.joueur.pseudo" for="field_pseudo">Pseudo</label>
+          <input type="text" class="form-control" name="pseudo" id="field_pseudo" data-cy="pseudo" formControlName="pseudo" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.joueur.motDePasse" for="field_motDePasse">Mot De Passe</label>
+          <input
+            type="text"
+            class="form-control"
+            name="motDePasse"
+            id="field_motDePasse"
+            data-cy="motDePasse"
+            formControlName="motDePasse"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.joueur.dateInscription" for="field_dateInscription"
+            >Date Inscription</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_dateInscription"
+              data-cy="dateInscription"
+              type="datetime-local"
+              class="form-control"
+              name="dateInscription"
+              formControlName="dateInscription"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.joueur.estAdministrateur" for="field_estAdministrateur"
+            >Est Administrateur</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="estAdministrateur"
+            id="field_estAdministrateur"
+            data-cy="estAdministrateur"
+            formControlName="estAdministrateur"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="avisApp.joueur.avis" for="field_avis">Avis</label>
+          <select class="form-control" id="field_avis" data-cy="avis" name="avis" formControlName="avis">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="avisOption.id === editForm.get('avis')!.value?.id ? editForm.get('avis')!.value : avisOption"
+              *ngFor="let avisOption of avisSharedCollection; trackBy: trackAvisById"
+            >
+              {{ avisOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

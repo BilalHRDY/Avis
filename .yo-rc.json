@@ -42,7 +42,9 @@
     "jwtSecretKey": "MzQ5ODI3M2RhOGEyMDliOTFjMTZjZTUwZmU5ZTFlNGRlMTk3MDc5YjBjOGY3OWQzYWQwZjM0ODA5NmMwMWZjMThiZmU5NGQ5ZDVkY2YyZDg3MWNhMjJkNDQ0NTYzNGE0ZTZmYzBiMzAwZDU3OGJkMmY0NDBkZDlhM2Y0ZmFmMWM=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Jeu", "Editeur", "Avis", "Joueur"],
+    "lastLiquibaseTimestamp": 1622810394000
   },
   "git-provider": "GitHub",
   "git-company": "BilalHRDY",
