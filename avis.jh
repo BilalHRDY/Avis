@@ -1,0 +1,42 @@
+
+entity Jeu {
+
+    id Long
+    nom String
+    description String
+    dateSortie Instant
+}
+
+entity Editeur {
+id Long
+nom String
+}
+
+entity Avis {
+id Long
+note Float
+description String
+dateEnvoi Instant
+}
+
+entity Joueur {
+id Long
+pseudo String
+motDePasse String
+dateInscription Instant
+estAdministrateur Boolean
+}
+
+relationship OneToMany {
+Avis to Joueur{avis}
+}
+
+
+relationship OneToMany {
+Avis to Jeu{avis}
+}
+
+ 
+ relationship OneToMany {
+ Jeu to Editeur{jeu}
+ }
